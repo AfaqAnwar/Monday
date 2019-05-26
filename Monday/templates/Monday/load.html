@@ -1,0 +1,19 @@
+{% extends "Monday/header.html" %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="outer">
+            <div class="inner col d-flex align-items-center justify-content-center">
+                {% load static %}
+                <img src="{% static '/Monday/img/Monday.png' %}" class="img-fluid" alt="error"/>
+                <h1>Monday is loading...</h1>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extrahead %}
+    <script type="text/javascript">
+        setTimeout(function() {
+            window.location.href = "chat";
+        }, 2000);
+    </script>
+{% endblock %}
