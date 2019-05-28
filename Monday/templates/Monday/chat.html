@@ -1,4 +1,23 @@
 {% extends "Monday/header.html" %}
+{% block extrahead %}
+    <script>
+        $.ajax({
+            url: '/chat',
+            data: {
+                'message': 'I want an AJAX response'
+            },
+            dataType: 'json',
+            type: 'POST',
+            success: function(data) {
+                alert(data);
+                $("body").append(data);
+            }
+        });
+    </script>
+{% endblock %}
 {% block content %}
-   <h1>Hello</h1>
+   <form method="POST" action=""> {% csrf_token %}
+    <input name="chat" type="text"/> <br/>
+    <input type="submit" value="Submit"/>
+   </form>
 {% endblock %}
