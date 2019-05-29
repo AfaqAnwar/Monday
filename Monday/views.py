@@ -15,6 +15,8 @@ def chat(request):
         result = inference.inference(text)
         indexBest = result.get("best_index")
         data = {'response': result.get("answers")[indexBest]}
+        print(text)
+        print(data)
         return JsonResponse(data)
     else:
         return render(request, 'Monday/chat.html')
