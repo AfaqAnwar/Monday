@@ -1,23 +1,27 @@
 {% extends "Monday/header.html" %}
 {% block extrahead %}
     <script>
-        $.ajax({
-            url: '/chat',
-            data: {
-                'message': 'I want an AJAX response'
-            },
-            dataType: 'json',
-            type: 'POST',
-            success: function(data) {
-                alert(data);
-                $("body").append(data);
-            }
-        });
+        // Submits an Ajax request on submit.
+        $(document).on('submit', '#chatform', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type:'POST',
+                url:'chat',
+                data: {
+                    input:$('#user_input').val()
+                },
+                success: function(data) {
+                    // Adds the response of Monday to the DOM.
+                   document.getElementById('chatbox').innerHTML += data["response"] + "<br/>";
+                }
+            })
+        })
     </script>
 {% endblock %}
 {% block content %}
-   <form method="POST" action=""> {% csrf_token %}
-    <input name="chat" type="text"/> <br/>
+   <form id="chatform" method="POST" action=""> {% csrf_token %}
+    <input id="user_input" type="text"/> <br/>
     <input type="submit" value="Submit"/>
    </form>
+    <div id="chatbox"></div>
 {% endblock %}

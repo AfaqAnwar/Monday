@@ -10,8 +10,11 @@ def index(request):
 
 def chat(request):
     if request.is_ajax():
-        text = request.POST.get("chat", None)
+        # Simple TF Model Only, to be replaced with more complex script.
+        text = request.POST['input']
         result = inference.inference(text)
-        return JsonResponse({'response': result})
+        indexBest = result.get("best_index")
+        data = {'response': result.get("answers")[indexBest]}
+        return JsonResponse(data)
     else:
         return render(request, 'Monday/chat.html')
