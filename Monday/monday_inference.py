@@ -5,7 +5,7 @@ import requests, json
 
 greetings_unformated = ["hello", "hi", "yo", "what up", "whats up"]
 greetings_formatted = ["Hello!", "Hi", "Yo!", "What's up?", "Hey...", "How are you doing?"]
-
+picture_api = ['https://aws.random.cat/meow', "https://random.dog/woof.json", "http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true", "https://randomfox.ca/floof/"]
 """
 Rules to help supplement Monday with conversing with the user.
 @Author Afaq Anwar
@@ -16,7 +16,27 @@ Rules to help supplement Monday with conversing with the user.
 def get_response(user_input):
     modified_input = user_input.translate(str.maketrans('', '', string.punctuation))
     modified_input = modified_input.lower()
-
+    # Checks to see if the user might want Monday to show them an image.
+    if "show" in modified_input:
+        if "picture" in modified_input or "image" in modified_input or "photo" in modified_input:
+            print("picutre hit")
+            choice = random.choice(picture_api)
+            json_request = requests.get(choice)
+            data = json_request.json()
+            if choice is picture_api[0]:
+                return data['file']
+            elif choice is picture_api[1]:
+                return data['url']
+            elif choice is picture_api[2]:
+                return random.choice(data)
+            elif choice is picture_api[3]:
+                return data['image']
+        elif "meme" in modified_input:
+            print("meme hit")
+            json_request = requests.get("https://meme-api.herokuapp.com/gimme")
+            data = json_request.json()
+            return data['url']
+    # Rules to help supplement the conversation and keep some information concrete.
     if modified_input in greetings_unformated:
         return random.choice(greetings_formatted)
     elif "who" in modified_input and modified_input.endswith("are you"):
@@ -27,14 +47,11 @@ def get_response(user_input):
         return "My name is Monday. I'm just a chatbot."
     elif "about yourself" in modified_input:
         return "Monday here, I'm a chatbot built with Tensorflow, I'm not that smart so take it easy for now please."
-    elif "show" in modified_input:
-        if "picture" in modified_input:
-            return ""
-        elif "meme" in modified_input:
-            json_request = requests.get("https://meme-api.herokuapp.com/gimme")
-            data = json_request.json()
-            return data['url']
+    elif "help me" in modified_input:
+        return "I'm not exactly sure what I can do..."
     else:
         result = modified_inference.inference(user_input)
         best_idx = result.get("best_index")
         return str(result.get("answers")[best_idx])
+
+
