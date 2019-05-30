@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from Rennon._deployment import inference
+from Monday import monday_inference
 
 
 # Create your views here.
@@ -12,11 +12,7 @@ def chat(request):
     if request.is_ajax():
         # Simple TF Model Only, to be replaced with more complex script.
         text = request.POST['input']
-        result = inference.inference(text)
-        indexBest = result.get("best_index")
-        data = {'response': result.get("answers")[indexBest]}
-        print(text)
-        print(data)
+        data = {'response': monday_inference.get_response(text)}
         return JsonResponse(data)
     else:
         return render(request, 'Monday/chat.html')
