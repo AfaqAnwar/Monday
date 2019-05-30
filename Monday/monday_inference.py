@@ -2,15 +2,22 @@ from Rennon._deployment import modified_inference
 import string
 import random
 
-greetings = ["hello", "hi", "yo", "whats up", "what up"]
+greetings_unformated = ["hello", "hi", "yo", "what up", "whats up"]
+greetings_formatted = ["Hello!", "Hi", "Yo!", "What's up?", "Hey..."]
+
+"""
+Rules to help supplement Monday with conversing with the user.
+@Author Afaq Anwar
+@Version 05/29/2019
+"""
 
 
 def get_response(user_input):
     modified_input = user_input.translate(str.maketrans('', '', string.punctuation))
     modified_input = modified_input.lower()
 
-    if modified_input in greetings:
-        return random.choice(greetings)
+    if modified_input in greetings_unformated:
+        return random.choice(greetings_formatted)
     elif "who" in modified_input and modified_input.endswith("are you"):
         return "I'm Monday, a chatbot. No I'm not sentient, maybe I will be, who knows..."
     elif "who" in modified_input and modified_input.endswith("made you"):

@@ -1,4 +1,11 @@
 {% extends "Monday/header.html" %}
+{% block extrahead %}
+    <script type="text/javascript">
+        setTimeout(function() {
+            window.location.href = "chat";
+        }, 2000);
+    </script>
+{% endblock %}
 {% block content %}
     <div class="container-fluid">
         <div class="outer">
@@ -9,11 +16,4 @@
             </div>
         </div>
     </div>
-{% endblock %}
-{% block extrahead %}
-    <script type="text/javascript">
-        setTimeout(function() {
-            window.location.href = "chat";
-        }, 2000);
-    </script>
 {% endblock %}
