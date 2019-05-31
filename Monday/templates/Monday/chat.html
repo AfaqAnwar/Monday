@@ -12,7 +12,12 @@
                 return function () {
                     var $message;
                     $message = $($('.message_template').clone().html());
-                    $message.addClass(_this.message_side).find('.text').html(_this.text);
+                    // Adds images to the message template.
+                    if (_this.message_side === 'left' && _this.text.search("https") >= 0 || _this.message_side === 'left' && _this.text.search("http") >= 0) {
+                        $message.addClass(_this.message_side).find('.text').html('<img style="max-width: 75%" class="inline" src=' + "'" + _this.text + "'" + '/>');
+                    } else {
+                        $message.addClass(_this.message_side).find('.text').html(_this.text);
+                    }
                     $('.messages').append($message);
                     return setTimeout(function () {
                         return $message.addClass('appeared');
@@ -46,7 +51,9 @@
                     text: text,
                     message_side: message_side
                 });
+
                 message.draw();
+
                 return $messages.animate({ scrollTop: $messages.prop('scrollHeight') }, 300);
             };
             $('.send_message').click(function (e) {
@@ -58,6 +65,7 @@
                     $('.send_message').trigger('click');
                 }
             });
+            sendMessage("Hello, I'm Monday a Deep Learning chatbot developed by Afaq Anwar. I'm new to this, so don't be too harsh. :D", false);
             // Submits an Ajax request on submit.
             $(document).on('click', '.send_message', function (e) {
                 e.preventDefault();

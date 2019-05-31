@@ -6,10 +6,11 @@ import requests, json
 greetings_unformated = ["hello", "hi", "yo", "what up", "whats up"]
 greetings_formatted = ["Hello!", "Hi", "Yo!", "What's up?", "Hey...", "How are you doing?"]
 picture_api = ['https://aws.random.cat/meow', "https://random.dog/woof.json", "http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true", "https://randomfox.ca/floof/"]
+fact_api = "http://randomuselessfact.appspot.com/random.json?language=en"
 """
 Rules to help supplement Monday with conversing with the user.
 @Author Afaq Anwar
-@Version 05/30/2019
+@Version 05/31/2019
 """
 
 
@@ -18,8 +19,7 @@ def get_response(user_input):
     modified_input = modified_input.lower()
     # Checks to see if the user might want Monday to show them an image.
     if "show" in modified_input:
-        if "picture" in modified_input or "image" in modified_input or "photo" in modified_input:
-            print("picutre hit")
+        if "picture" in modified_input or "image" in modified_input or "photo" in modified_input or "gif" in modified_input:
             choice = random.choice(picture_api)
             json_request = requests.get(choice)
             data = json_request.json()
@@ -32,10 +32,15 @@ def get_response(user_input):
             elif choice is picture_api[3]:
                 return data['image']
         elif "meme" in modified_input:
-            print("meme hit")
             json_request = requests.get("https://meme-api.herokuapp.com/gimme")
             data = json_request.json()
             return data['url']
+    # Checks to see if the user wants a random fact.
+    if "tell" in modified_input:
+        if "fact" in modified_input:
+            json_request = requests.get(fact_api)
+            data = json_request.json()
+            return data['text']
     # Rules to help supplement the conversation and keep some information concrete.
     if modified_input in greetings_unformated:
         return random.choice(greetings_formatted)

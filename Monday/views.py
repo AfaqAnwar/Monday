@@ -1,9 +1,8 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from Monday import monday_inference
-
-
-# Create your views here.
+from django.views.decorators.csrf import ensure_csrf_cookie
+@ensure_csrf_cookie
 def index(request):
     return render(request, 'Monday/load.html')
 
