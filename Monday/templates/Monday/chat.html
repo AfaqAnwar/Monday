@@ -13,7 +13,7 @@
                     var $message;
                     $message = $($('.message_template').clone().html());
                     // Adds images to the message template.
-                    if (_this.message_side === 'left' && _this.text.search("https") >= 0 || _this.message_side === 'left' && _this.text.search("http") >= 0) {
+                    if (_this.message_side === 'left' && _this.text.search("jpg") > 0 || _this.message_side === 'left' && _this.text.search("jpeg") > 0 || _this.message_side === 'left' && _this.text.search("png") > 0 || _this.message_side === 'left' && _this.text.search("gif") > 0) {
                         $message.addClass(_this.message_side).find('.text').html('<img style="max-width: 75%" class="inline" src=' + "'" + _this.text + "'" + '/>');
                     } else {
                         $message.addClass(_this.message_side).find('.text').html(_this.text);

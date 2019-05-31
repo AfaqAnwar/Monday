@@ -2,6 +2,7 @@ from Rennon._deployment import modified_inference
 import string
 import random
 import requests, json
+from google import google
 
 greetings_unformated = ["hello", "hi", "yo", "what up", "whats up"]
 greetings_formatted = ["Hello!", "Hi", "Yo!", "What's up?", "Hey...", "How are you doing?"]
@@ -35,12 +36,27 @@ def get_response(user_input):
             json_request = requests.get("https://meme-api.herokuapp.com/gimme")
             data = json_request.json()
             return data['url']
-    # Checks to see if the user wants a random fact.
+    # Checks to see if the user wants random facts.
     if "tell" in modified_input:
         if "fact" in modified_input:
             json_request = requests.get(fact_api)
             data = json_request.json()
             return data['text']
+    # Allows monday to query a vast array of topics using Wikipedia and Google.
+    if "tell" in modified_input or "who is" in modified_input or "what is" in modified_input:
+        obj_index = len(modified_input)
+        if "tell" in modified_input and "more about" in modified_input or "tell" in modified_input and "about" in modified_input:
+            obj_index = modified_input.index("about") + 5
+        elif "who is" in modified_input or "what is":
+            obj_index = modified_input.index("is") + 2
+        if obj_index < len(modified_input):
+            query = modified_input[obj_index:]
+            search_results = google.search(query, 1)
+            for result in search_results:
+                if "wikipedia" in result.link:
+                    return result.description + "</br>" + "To read more visit the following link" + "</br>" + result.link
+        else:
+            return "I was not able to find anything about that."
     # Rules to help supplement the conversation and keep some information concrete.
     if modified_input in greetings_unformated:
         return random.choice(greetings_formatted)
