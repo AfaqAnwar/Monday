@@ -1,5 +1,5 @@
 # Monday
-Monday is a Deep Learning Chatbot deployed through a Django Web Application based upon Rennon.
+Monday is a Machine Learning Chatbot deployed through a Django Web Application.
 
 ## STATUS
 Currently under development.
