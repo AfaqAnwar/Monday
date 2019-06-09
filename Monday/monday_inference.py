@@ -1,11 +1,17 @@
-from Rennon._deployment import modified_inference
+import chatterbot
+from chatterbot import ChatBot
+import chatterbot.trainers
+from chatterbot.trainers import ChatterBotCorpusTrainer
+
 import string
 import random
 import requests, json
 from google import google
 import urllib.parse
 
-greetings_unformated = ["hello", "hi", "yo", "what up", "whats up"]
+monday = ChatBot("Monday")
+
+greetings_unformatted = ["hello", "hi", "yo", "what up", "whats up"]
 greetings_formatted = ["Hello!", "Hi", "Yo!", "What's up?", "Hey...", "How are you doing?"]
 picture_api = ['https://aws.random.cat/meow', "https://random.dog/woof.json", "http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true", "https://randomfox.ca/floof/"]
 fact_api = "http://randomuselessfact.appspot.com/random.json?language=en"
@@ -17,12 +23,19 @@ Rules to help supplement Monday with conversing with the user.
 """
 
 
+def initialize_monday():
+    trainer = ChatterBotCorpusTrainer(monday)
+    trainer.train(
+        "chatterbot.corpus.english"
+    )
+
+
 def get_response(user_input):
     modified_input = user_input.translate(str.maketrans('', '', no_punctuation_besides_math()))
     modified_input = modified_input.lower()
 
     # Rules to help supplement the conversation and keep some information concrete.
-    if modified_input in greetings_unformated:
+    if modified_input in greetings_unformatted:
         return random.choice(greetings_formatted)
     elif "who" in modified_input and modified_input.endswith("are you"):
         return "I'm Monday, a chatbot. No I'm not sentient, maybe I will be, who knows..."
@@ -89,9 +102,8 @@ def get_response(user_input):
         else:
             return "I was not able to find anything about that."
 
-    result = modified_inference.inference(user_input)
-    best_idx = result.get("best_index")
-    return str(result.get("answers")[best_idx])
+    response = monday.get_response(modified_input)
+    return str(response)
 
 
 # Checks to see if a string is an arithmetic operation.
