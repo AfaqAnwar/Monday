@@ -69,16 +69,19 @@
             // Submits an Ajax request on submit.
             $(document).on('click', '.send_message', function (e) {
                 e.preventDefault();
-                $.ajax({
-                    type:'POST',
-                    url:'chat',
-                    data: {
-                        input: $('#actual_input').val()
-                    },
-                    success: function(data) {
-                        sendMessage(data['response'], false);
-                    }
-                })
+                var actualInputVal = $("#actual_input").val();
+                if (actualInputVal.length > 0) {
+                    $.ajax({
+                        type: 'POST',
+                        url: 'chat',
+                        data: {
+                            input: actualInputVal
+                        },
+                        success: function (data) {
+                            sendMessage(data['response'], false);
+                        }
+                    })
+                }
             });
         });
         }.call(this));
