@@ -14,4 +14,5 @@ def chat(request):
         data = {'response': monday_inference.get_response(text)}
         return JsonResponse(data)
     else:
+        monday_inference.initialize_monday()
         return render(request, 'Monday/chat.html')
