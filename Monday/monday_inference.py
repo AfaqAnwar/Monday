@@ -18,7 +18,7 @@ monday = ChatBot("Monday")
 """
 Rules to help supplement Monday with conversing with the user.
 @Author Afaq Anwar
-@Version 06/09/2019
+@Version 06/10/2019
 """
 
 
@@ -45,7 +45,7 @@ def get_response(user_input):
     elif "your name" in modified_input:
         return "My name is Monday. I'm just a chatbot."
     elif "about yourself" in modified_input:
-        return "Monday here, I'm a chatbot built with Tensorflow, I'm not that smart so take it easy for now please."
+        return "Monday here! I'm just a chatbot, I can look up information, do math, and talk to you!"
     elif "help me" in modified_input:
         return "I'm not exactly sure what I can do..."
 
