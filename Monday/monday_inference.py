@@ -9,6 +9,7 @@ import urllib.parse
 
 greetings_unformatted = ["hello", "hi", "yo", "what up", "whats up"]
 greetings_formatted = ["Hello!", "Hi", "Yo!", "What's up?", "Hey...", "How are you doing?"]
+goodbyes = ["Bye", "Bye!", "Bye Bye!", "See you later.", "Talk to you later!", "Take it easy.", "It was nice talking to you, so long."]
 picture_api = ['https://aws.random.cat/meow', "https://random.dog/woof.json", "http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true", "https://randomfox.ca/floof/"]
 fact_api = "http://randomuselessfact.appspot.com/random.json?language=en"
 calculator_api = "http://api.mathjs.org/v4/?expr="
@@ -16,8 +17,8 @@ calculator_api = "http://api.mathjs.org/v4/?expr="
 monday = ChatBot("Monday")
 
 """
-Rules to help supplement Monday with conversing with the user.
-@Author Afaq Anwar
+Allows Monday to generate a response to multiple inputs based upon a combination of
+rules and Machine Learning.
 @Version 06/10/2019
 """
 
@@ -36,6 +37,8 @@ def get_response(user_input):
     # Rules to help supplement the conversation and keep some information concrete.
     if modified_input in greetings_unformatted:
         return random.choice(greetings_formatted)
+    elif "bye" in modified_input:
+        return random.choice(goodbyes)
     elif "who" in modified_input and modified_input.endswith("are you"):
         return "I'm Monday, a chatbot. No I'm not sentient, maybe I will be, who knows..."
     elif "who is" in modified_input and modified_input.endswith("monday"):
