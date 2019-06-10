@@ -123,6 +123,7 @@ def no_punctuation_besides_math():
     return custom_punctuation
 
 
+# Obtains information from Wikipedia through a Google search.
 def obtain_information(query):
     print(query)
     search_results = google.search(query, 1)
