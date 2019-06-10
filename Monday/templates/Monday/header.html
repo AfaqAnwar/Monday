@@ -24,13 +24,31 @@
           }
         });
     </script>
+    <style>
+        body.dark-mode {
+        background-color: #353C51;
+        color: #edeff2;
+        }
+
+        body.light-mode {
+          background-color: #edeff2;
+          color: #0b0c0f;
+        }
+
+        .dark_button {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
     {% block extrahead %}
     {% endblock %}
 </head>
 
-<body class="body">
+<body id="body" class="light-mode">
     {% block content %}
     {% endblock %}
+    <a class="dark_button" href="#" style="text-decoration:none; display: inline-block;" onclick="toggleDarkLight()">🌗</a>
 </body>
 
 </html>
