@@ -86,10 +86,15 @@ def get_response(user_input):
         return data
 
     # Allows monday to query a vast array of topics using Wikipedia and Google.
-    if "who" in modified_input and modified_input.endswith("is"):
-        # Note the query is one index behind the theoretical start of the subject, this is to account for spacing errors.
-        query = modified_input[modified_input.index("who") + 3: len(modified_input) - 2]
-        return obtain_information(query)
+    if modified_input.endswith("is"):
+        if "who" in modified_input:
+            # Note the query is one index behind the theoretical start of the subject, this is to account for spacing errors.
+            query = modified_input[modified_input.index("who") + 3: len(modified_input) - 2]
+            return obtain_information(query)
+        elif "what" in modified_input:
+            print(query)
+            query = modified_input[modified_input.index("what") + 4: len(modified_input) - 2]
+            return obtain_information(query)
 
     if "tell" in modified_input or "who is" in modified_input or "what is" in modified_input:
         obj_index = len(modified_input)
@@ -125,9 +130,9 @@ def no_punctuation_besides_math():
 
 # Obtains information from Wikipedia through a Google search.
 def obtain_information(query):
-    print(query)
-    search_results = google.search(query, 1)
+    # Searches the first 3 pages.
+    search_results = google.search(query, 3)
     for result in search_results:
         if "wikipedia" in result.link:
-            return result.description + "</br>" + "</br> You can find more information from the " + "<a href=" + result.link + " target='_blank'>" + "Source" + "</a>."
+            return result.description + "</br>" + "</br> You can find more information from the " + "<a href=" + result.link + " target='_blank'>" + "source" + "</a>."
     return "I was not able to find anything about that."
