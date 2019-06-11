@@ -2,6 +2,7 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
 
 import string
+import re
 import random
 import requests, json
 from google import google
@@ -10,6 +11,7 @@ import urllib.parse
 greetings_unformatted = ["hello", "hi", "yo", "what up", "whats up"]
 greetings_formatted = ["Hello!", "Hi", "Yo!", "What's up?", "Hey...", "How are you doing?"]
 goodbyes = ["Bye", "Bye!", "Bye Bye!", "See you later.", "Talk to you later!", "Take it easy.", "It was nice talking to you, so long."]
+error_phrases = ["I can't seem to understand you.", "I have no clue what you're talking about...", "You want to try that again?", "?", "I'm sorry, that makes no sense."]
 picture_api = ['https://aws.random.cat/meow', "https://random.dog/woof.json", "http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true", "https://randomfox.ca/floof/"]
 fact_api = "http://randomuselessfact.appspot.com/random.json?language=en"
 calculator_api = "http://api.mathjs.org/v4/?expr="
@@ -19,7 +21,7 @@ monday = ChatBot("Monday")
 """
 Allows Monday to generate a response to multiple inputs based upon a combination of
 rules and Machine Learning.
-@Version 06/10/2019
+@Version 06/11/2019
 """
 
 
@@ -31,9 +33,18 @@ def initialize_monday():
 
 
 def get_response(user_input):
+    # Avoids invalid input with no legitamate characters.
+    letters_found = re.search('[a-zA-Z]', user_input)
+    if not letters_found:
+        return random.choice(error_phrases)
+    
     modified_input = user_input.translate(str.maketrans('', '', no_punctuation_besides_math()))
     modified_input = modified_input.lower()
-
+   
+    # Avoids invalid input that is too short or too long.
+    if len(modified_input) <= 1 or len(modified_input) > 22:
+        return random.choice(error_phrases)
+    
     # Rules to help supplement the conversation and keep some information concrete.
     if modified_input in greetings_unformatted:
         return random.choice(greetings_formatted)
