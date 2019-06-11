@@ -46,19 +46,15 @@ Including the following phrases in a sentence will allow Monday to run a search 
 ### API Uages
 
 #### JSON
-1. Images
-    * [Random Cat Image](https://aws.random.cat/meow)
-    * [Random Dog Image](https://random.dog/woof.json)
-    * [Random Shiba Inu Images (10)](http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true)
-    * [Random Fox Image](https://randomfox.ca/floof/)
-2. Facts
-    * [Random Facts](http://randomuselessfact.appspot.com/random.json?language=en)
-3. Calculator
-    * [Calculator API](http://api.mathjs.org/v4/?expr=) _Requires mathematical expression to be url encoded._
+ * [Random Cat Image](https://aws.random.cat/meow)
+ * [Random Dog Image](https://random.dog/woof.json)
+ * [Random Shiba Inu Images (10)](http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true)
+ * [Random Fox Image](https://randomfox.ca/floof/)
+ * [Random Facts](http://randomuselessfact.appspot.com/random.json?language=en)
+ * [Calculator API](http://api.mathjs.org/v4/?expr=) _Requires mathematical expression to be url encoded._
 
 #### Custom
-1. Google Search
-    * [Google Search API built for Python](https://github.com/abenassi/Google-Search-API)
+ * [Google Search API built for Python](https://github.com/abenassi/Google-Search-API)
 
 #### Notes
 This project was originally supposed to run a complete Tensorflow backend using a modified NMT Translator [Rennon](https://github.com/AfaqAnwar/Rennon), however due to it's lack of coherent responses I decided it would be better to use the [Chatterbot library](https://github.com/gunthercox/ChatterBot).
