@@ -38,11 +38,23 @@ Including the following phrases in a sentence will allow Monday to run a search 
 <tell> + <more about || about> + ANY SUBJECT || <who is || what is> + ANY SUBJECT 
 ```
 
-  * _Example: Do you know who Jarvis is?_
+  _Example Statements_
 
-  * _Example: Can you tell me about Artificial Intelligence?_
+  * _Can you show me a meme?_
+  
+  * _Bring up any image._
+  
+  * _Tell me a random fact._
+  
+  * _Give me a fact please._
+  
+  * _What is 9 + 10?_
 
-  * _Example: Can you tell me what Machine Learning is?_
+  * _Do you know who Jarvis is?_
+
+  * _Can you tell me about Artificial Intelligence?_
+
+  * _Can you tell me what Machine Learning is?_
 
 ### API Uages
 
