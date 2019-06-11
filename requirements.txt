@@ -32,7 +32,7 @@ pypiwin32==223
 pyrsistent==0.15.2
 python-dateutil==2.7.5
 pytz==2019.1
-pywin32==224
+pywin32==223
 PyYAML==3.13
 requests==2.20.1
 selenium==2.53.6
