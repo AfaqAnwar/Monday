@@ -14,7 +14,7 @@ Django==2.2.1
 docutils==0.14
 fake-useragent==0.1.11
 future==0.16.0
-Google-Search-API==1.1.14
+git+https://github.com/abenassi/Google-Search-API
 idna==2.7
 jmespath==0.9.4
 jsonschema==3.0.1
