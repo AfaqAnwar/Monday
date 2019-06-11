@@ -13,7 +13,7 @@ Django==2.2.1
 docutils==0.14
 fake-useragent==0.1.11
 future==0.16.0
-git+https://github.com/abenassi/Google-Search-API
+Google-Search-API==1.1.14
 idna==2.7
 jmespath==0.9.4
 jsonschema==3.0.1
@@ -42,6 +42,7 @@ spacy==2.1.4
 SQLAlchemy==1.2.19
 sqlparse==0.3.0
 srsly==0.0.6
+termcolor==1.1.0
 thinc==7.0.4
 tqdm==4.32.1
 Unidecode==1.0.23
