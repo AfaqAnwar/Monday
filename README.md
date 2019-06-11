@@ -2,8 +2,9 @@
 Monday is a Machine Learning Chatbot deployed through a Django Web Application.
 
 ## Status
-Monday is now LIVE!
-You can talk to Monday [here](http://www.afaqanwar.io/)!
+**Monday is now LIVE!**
+
+**You can talk to Monday [here](http://www.afaqanwar.io/)!**
 
 ### More About Monday
 Monday currently communicates through a web application developed with Django, Jquery, and some simple Ajax requests.
