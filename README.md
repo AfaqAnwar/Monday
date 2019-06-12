@@ -61,7 +61,7 @@ Including the following phrases in a sentence will allow Monday to run a search 
  * [Random Shiba Inu Images (10)](http://shibe.online/api/shibes?count=10&urls=true&httpsUrls=true)
  * [Random Fox Image](https://randomfox.ca/floof/)
  * [Random Facts](http://randomuselessfact.appspot.com/random.json?language=en)
- * [Calculator API](http://api.mathjs.org/v4/?expr=) _Requires mathematical expression to be url encoded._
+ * [Calculator API](http://api.mathjs.org/v4/?expr=)
 
 #### Custom
  * [Google Search API built for Python](https://github.com/abenassi/Google-Search-API)
