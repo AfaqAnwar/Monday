@@ -21,7 +21,7 @@ monday = ChatBot("Monday")
 """
 Allows Monday to generate a response to multiple inputs based upon a combination of
 rules and Machine Learning.
-@Version 06/11/2019
+@Version 06/12/2019
 """
 
 
@@ -35,7 +35,9 @@ def initialize_monday():
 def get_response(user_input):
     # Avoids invalid input with no legitamate characters.
     letters_found = re.search('[a-zA-Z]', user_input)
-    if not letters_found:
+    unwanted_characters = re.search(r'[^\x00-\x7f]', user_input)
+
+    if not letters_found or unwanted_characters:
         return random.choice(error_phrases)
     
     modified_input = user_input.translate(str.maketrans('', '', no_punctuation_besides_math()))
