@@ -42,7 +42,7 @@ def get_response(user_input):
     modified_input = modified_input.lower()
    
     # Avoids invalid input that is too short or too long.
-    if len(modified_input) <= 1 or len(modified_input) > 22:
+    if len(modified_input) <= 1:
         return random.choice(error_phrases)
     
     # Rules to help supplement the conversation and keep some information concrete.
