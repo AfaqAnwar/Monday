@@ -67,4 +67,6 @@ Including the following phrases in a sentence will allow Monday to run a search 
  * [Google Search API built for Python](https://github.com/abenassi/Google-Search-API)
 
 #### Notes
-This project was originally supposed to run a complete Tensorflow backend using a modified NMT Translator [Rennon](https://github.com/AfaqAnwar/Rennon), however due to it's lack of coherent responses I decided it would be better to use the [Chatterbot library](https://github.com/gunthercox/ChatterBot).
+This project was originally supposed to run a complete Tensorflow backend using a modified NMT Translator [Rennon](https://github.com/AfaqAnwar/Rennon), however due to hosting and general scaling issues I decided that the [Chatterbot library](https://github.com/gunthercox/ChatterBot) would be a better implementation.
+
+The [Rennon branch](https://github.com/AfaqAnwar/Monday/tree/rennon) has all the neccesary code, and instructions required to run a local copy of the web application by using any of the [released Rennon models](https://github.com/AfaqAnwar/Rennon/releases). 
