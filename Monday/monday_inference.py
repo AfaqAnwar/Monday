@@ -19,8 +19,8 @@ calculator_api = "http://api.mathjs.org/v4/?expr="
 monday = ChatBot("Monday")
 
 """
-Allows Monday to generate a response to multiple inputs based upon a combination of
-rules and Machine Learning.
+Allows Monday to generate a response to various inputs using a combination of rules and Machine Learning.
+@Author Afaq Anwar
 @Version 06/12/2019
 """
 
