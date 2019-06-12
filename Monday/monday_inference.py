@@ -41,7 +41,7 @@ def get_response(user_input):
     modified_input = user_input.translate(str.maketrans('', '', no_punctuation_besides_math()))
     modified_input = modified_input.lower()
    
-    # Avoids invalid input that is too short or too long.
+    # Avoids invalid input that is too short.
     if len(modified_input) <= 1:
         return random.choice(error_phrases)
     
