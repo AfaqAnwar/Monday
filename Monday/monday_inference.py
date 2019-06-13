@@ -21,7 +21,7 @@ monday = ChatBot("Monday")
 """
 Allows Monday to generate a response to various inputs using a combination of rules and Machine Learning.
 @Author Afaq Anwar
-@Version 06/12/2019
+@Version 06/13/2019
 """
 
 
@@ -66,7 +66,7 @@ def get_response(user_input):
         return "I'm not exactly sure what I can do..."
 
     # Checks to see if the user might want Monday to show them an image.
-    if "show" in modified_input or "download" in modified_input or "bring up":
+    if "show" in modified_input or "download" in modified_input or "bring up" in modified_input:
         if "picture" in modified_input or "image" in modified_input or "photo" in modified_input or "gif" in modified_input:
             choice = random.choice(picture_api)
             json_request = requests.get(choice)
