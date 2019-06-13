@@ -9,10 +9,8 @@ def index(request):
 
 def chat(request):
     if request.is_ajax():
-        # Simple TF Model Only, to be replaced with more complex script.
         text = request.POST['input']
         data = {'response': monday_inference.get_response(text)}
         return JsonResponse(data)
     else:
-        monday_inference.initialize_monday()
         return render(request, 'Monday/chat.html')
