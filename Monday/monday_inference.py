@@ -108,7 +108,6 @@ def get_response(user_input):
             query = modified_input[modified_input.index("who") + 3: len(modified_input) - 2]
             return obtain_information(query)
         elif "what" in modified_input:
-            print(query)
             query = modified_input[modified_input.index("what") + 4: len(modified_input) - 2]
             return obtain_information(query)
 
