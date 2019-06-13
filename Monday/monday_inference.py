@@ -33,7 +33,7 @@ def initialize_monday():
 
 
 def get_response(user_input):
-    # Avoids invalid input with no legitamate characters.
+    # Avoids invalid input with no legitimate characters.
     letters_found = re.search('[a-zA-Z]', user_input)
     unwanted_characters = re.search(r'[^\x00-\x7f]', user_input)
 
