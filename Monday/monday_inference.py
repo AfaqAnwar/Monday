@@ -2,7 +2,7 @@ import _deployment.inference
 import string
 import re
 import random
-import requests, json
+import requests
 from google import google
 import urllib.parse
 
@@ -17,7 +17,7 @@ calculator_api = "http://api.mathjs.org/v4/?expr="
 """
 Allows Rennon to generate a response to various inputs using a combination of rules and Machine Learning.
 @Author Afaq Anwar
-@Version 06/12/2019
+@Version 06/13/2019
 """
 
 
@@ -110,7 +110,7 @@ def get_response(user_input):
             query = modified_input[obj_index:]
             return obtain_information(query)
 
-    response = _deployment.inference
+    response = _deployment.inference.inference(modified_input)
     best_answer = response["best_index"]
     return response.get("answers")[best_answer]
 

@@ -108,7 +108,7 @@ Although this tutorial is Linux based, the commands should be the same except fo
 
 ### Steps
   1. Clone this repository onto your local machine.
-  2. Download one of the [Rennon release models](https://www.github.com/AfaqAnwar/Rennon/releases) and extract the ```_deployment```      folder into ```Monday/Rennon```
+  2. Download one of the [Rennon release models](https://www.github.com/AfaqAnwar/Rennon/releases) and extract the ```_deployment```      folder into the root folder ```Monday/```.
   3. Edit ```Monday/Rennon/settings.py``` to include a unique secret key.
   4. Edit ```Monday/Rennon/settings.py``` to include 'localhost' within ALLOWED_HOSTS.
   4. Open a CLI and CD into the main project directory ```Monday/``` with your existing Python virtual environment active.
