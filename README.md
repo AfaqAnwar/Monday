@@ -98,6 +98,8 @@ Although this tutorial is Linux based, the commands should be the same except fo
 
     requests
     
+    sqlparse
+    
     Django
     
     Google Search API built for Python 
