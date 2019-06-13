@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from Monday import monday_inference
+from Monday import rennon_inference
 from django.views.decorators.csrf import ensure_csrf_cookie
 @ensure_csrf_cookie
 def index(request):
@@ -10,7 +10,7 @@ def index(request):
 def chat(request):
     if request.is_ajax():
         text = request.POST['input']
-        data = {'response': monday_inference.get_response(text)}
+        data = {'response': rennon_inference.get_response(text)}
         return JsonResponse(data)
     else:
         return render(request, 'Monday/chat.html')

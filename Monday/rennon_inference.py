@@ -55,7 +55,7 @@ def get_response(user_input):
         return "I'm not exactly sure what I can do..."
 
     # Checks to see if the user might want Rennon to show them an image.
-    if "show" in modified_input or "download" in modified_input or "bring up":
+    if "show" in modified_input or "download" in modified_input or "bring up" in modified_input:
         if "picture" in modified_input or "image" in modified_input or "photo" in modified_input or "gif" in modified_input:
             choice = random.choice(picture_api)
             json_request = requests.get(choice)
@@ -110,9 +110,9 @@ def get_response(user_input):
             query = modified_input[obj_index:]
             return obtain_information(query)
 
-    response = _deployment.inference.inference(modified_input)
-    best_answer = response["best_index"]
-    return response.get("answers")[best_answer]
+    response = _deployment.inference.inference(user_input)
+    best_answer_index = response["best_index"]
+    return response.get("answers")[best_answer_index]
 
 
 # Checks to see if a string is an arithmetic operation.
