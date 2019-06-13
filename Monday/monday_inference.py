@@ -120,8 +120,9 @@ def get_response(user_input):
         if obj_index < len(modified_input):
             query = modified_input[obj_index:]
             return obtain_information(query)
-
-    response = monday.get_response(modified_input)
+    
+    # Using user_input to retain original statements. If the input reaches this point it's clear of any errors.
+    response = monday.get_response(user_input)
     return str(response)
 
 
