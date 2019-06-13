@@ -1,6 +1,8 @@
 # Monday
 Monday is a Machine Learning Chatbot deployed through a Django Web Application.
 
+This branch, Rennon, is a Deep Learning Chatbot that uses a [Tensorflow backend](https://github.com/AfaqAnwar/Rennon). 
+
 ## Status: **[Monday is now LIVE!](http://www.afaqanwar.io/)**
 
 ### More About Monday
@@ -66,7 +68,45 @@ Including the following phrases in a sentence will allow Monday to run a search 
 #### Custom
  * [Google Search API built for Python](https://github.com/abenassi/Google-Search-API)
 
-#### Notes
-This project was originally supposed to run a complete Tensorflow backend using a modified NMT Translator [Rennon](https://github.com/AfaqAnwar/Rennon), however due to hosting and general scaling issues I decided that the [Chatterbot library](https://github.com/gunthercox/ChatterBot) would be a better implementation.
+## Hosting Locally
 
-The [Rennon branch](https://github.com/AfaqAnwar/Monday/tree/rennon) has all the neccesary code, and instructions required to run a local copy of the web application by using any of the [released Rennon models](https://github.com/AfaqAnwar/Rennon/releases). 
+### Requirements for Hosting Locally
+I recommend you install Anaconda and create a virtual Python environment, this is the simplest and cleanest way to get the project running locally.
+
+Although this tutorial is Linux based, the commands should be the same except for directiories and some minor CLI commands.
+[Reccomended Tutorial for seamless installation.](https://www.pugetsystems.com/labs/hpc/Install-TensorFlow-with-GPU-Support-the-Easy-Way-on-Ubuntu-18-04-without-installing-CUDA-1170/)
+
+### Prerequisite Libraries
+```
+
+    Rennon release model 0.1 || 1.0 [1.0 is Recommended]
+
+    Python 3.6.X
+
+    Tensorflow-GPU Version 1.4.0 +  
+      ~Following the Anaconda installation will also install all other required packages along with Tensorflow-GPU
+
+    tqdm
+
+    colorama
+
+    regex
+
+    python-Levenshtein
+
+    requests
+    
+    Django
+    
+    Google Search API built for Python 
+    
+```
+
+### Steps
+  1. Clone this repository onto your local machine.
+  2. Download one of the [Rennon release models](https://www.github.com/AfaqAnwar/Rennon/releases) and extract the ```_deployment```      folder into ```Monday/Rennon```
+  3. Edit ```Monday/Rennon/settings.py``` to include a unique secret key.
+  4. Edit ```Monday/Rennon/settings.py``` to include 'localhost' within ALLOWED_HOSTS.
+  4. Open a CLI and CD into the main project directory ```Monday/``` with your existing Python virtual environment active.
+  5. Run the following command ```python manage.py runserver```. 
+  6. Open a browser and navigate to ```localhost:8000```.
