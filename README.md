@@ -2,7 +2,7 @@
 Monday was a Machine Learning Chatbot deployed through a Django Web Application.
 
 ### More About Monday
-Monday currently communicates through a web application developed with Django, Jquery, and some simple Ajax requests.
+Monday communicates through a web application developed with Django, Jquery, and some simple Ajax requests.
 
 Monday also has a few features!
 
