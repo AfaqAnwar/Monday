@@ -50,6 +50,8 @@ Including the following phrases in a sentence will allow Monday to run a search 
   * _Can you tell me about Artificial Intelligence?_
 
   * _Can you tell me what Machine Learning is?_
+  
+  *_Do you want to visit New York with me?_*
 
 ### API Uages
 
