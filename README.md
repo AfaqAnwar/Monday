@@ -76,7 +76,7 @@ Although this tutorial is Linux based, the commands should be the same except fo
 
 [Additional Anaconda Documentation](https://docs.anaconda.com/anaconda/)
 
-### Prerequisite Libraries
+### Prerequisites
 ```
 
     Rennon release model 0.1 || 1.0 [1.0 is Recommended]
