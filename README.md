@@ -74,7 +74,9 @@ The [Rennon branch](https://github.com/AfaqAnwar/Monday/tree/rennon) has all the
 ### Requirements for Hosting Locally
 I recommend you install Anaconda and create a virtual Python environment, this is the simplest and cleanest way to get the project running locally.
 
-### Prerequisite Libraries
+[Anaconda Documentation](https://docs.anaconda.com/anaconda/)
+
+### Prerequisites
 ```
 
     Python 3.6.X
