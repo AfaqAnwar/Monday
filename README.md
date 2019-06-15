@@ -1,7 +1,11 @@
 # Monday
-Monday was a Machine Learning Chatbot deployed through a Django Web Application.
+Monday is a Machine Learning Chatbot deployed through a Django Web Application.
 
 This branch, Rennon, is a Deep Learning Chatbot that uses a [Tensorflow backend](https://github.com/AfaqAnwar/Rennon).
+
+**THIS BRANCH MUST BE HOSTED LOCALLY,  [THE MASTER BRANCH](https://github.com/AfaqAnwar/Monday) IS CURRENTLY IN PRODUCTION**
+
+## Status: **[Monday is now LIVE!](http://www.afaqanwar.io/)**
 
 ### More About Monday
 Monday currently communicates through a web application developed with Django, Jquery, and some simple Ajax requests.
@@ -73,6 +77,8 @@ I recommend you install Anaconda and create a virtual Python environment, this i
 
 Although this tutorial is Linux based, the commands should be the same except for directiories and some minor CLI commands.
 [Reccomended Tutorial for seamless installation.](https://www.pugetsystems.com/labs/hpc/Install-TensorFlow-with-GPU-Support-the-Easy-Way-on-Ubuntu-18-04-without-installing-CUDA-1170/)
+
+[Additional Anaconda Documentation](https://docs.anaconda.com/anaconda/)
 
 ### Prerequisite Libraries
 ```
