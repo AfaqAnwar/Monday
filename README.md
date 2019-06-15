@@ -3,8 +3,6 @@ Monday was a Machine Learning Chatbot deployed through a Django Web Application.
 
 This branch, Rennon, is a Deep Learning Chatbot that uses a [Tensorflow backend](https://github.com/AfaqAnwar/Rennon).
 
-## Status: **[Monday is now LIVE!](http://www.afaqanwar.io/)**
-
 ### More About Monday
 Monday currently communicates through a web application developed with Django, Jquery, and some simple Ajax requests.
 
