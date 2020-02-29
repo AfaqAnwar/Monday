@@ -1,6 +1,9 @@
 # Monday
 Monday was a Machine Learning Chatbot deployed through a Django Web Application.
 
+## Example Chat with Rennon (Deep-Learning Model)
+![Example Chat with Rennon](https://i.imgur.com/TuKBZal.gif)
+
 ### [More About Monday](https://github.com/AfaqAnwar/Monday/blob/master/Monday-Presentation.pdf)
 Monday communicates through a web application developed with Django, Jquery, and some simple Ajax requests.
 
