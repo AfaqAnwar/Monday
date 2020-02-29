@@ -1,10 +1,10 @@
 # Monday 
 Monday was a Machine Learning Chatbot deployed through a Django Web Application.
 
+#### This branch, Rennon, is a Deep Learning Chatbot that uses a [Tensorflow backend](https://github.com/AfaqAnwar/Rennon).
+
 ## Example Chat with Rennon (Deep-Learning Model)
 ![Example Chat with Rennon](https://i.imgur.com/TuKBZal.gif)
-
-#### This branch, Rennon, is a Deep Learning Chatbot that uses a [Tensorflow backend](https://github.com/AfaqAnwar/Rennon).
 
 ### [More About Monday](https://github.com/AfaqAnwar/Monday/blob/rennon/Monday-Presentation.pdf)
 Monday communicates through a web application developed with Django, Jquery, and some simple Ajax requests.
