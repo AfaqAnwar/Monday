@@ -46,7 +46,7 @@ def get_response(user_input):
     elif "who is" in modified_input and modified_input.endswith("Rennon"):
         return "I'm Rennon!"
     elif "who" in modified_input and modified_input.endswith("made you"):
-        return "I was made by Afaq Anwar, a 17 year old Computer Science student."
+        return "I was made by Afaq Anwar, a Computer Science student."
     elif "your name" in modified_input:
         return "My name is Rennon. I'm just a chatbot."
     elif "about yourself" in modified_input:
