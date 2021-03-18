@@ -6,7 +6,7 @@ chardet==3.0.4
 ChatterBot==1.0.5
 chatterbot-corpus==1.2.0
 cymem==2.0.2
-Django==2.2.10
+Django==2.2.18
 fake-useragent==0.1.11
 future==0.17.1
 Google-Search-API==1.1.14
